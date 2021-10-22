@@ -8,6 +8,11 @@ use App\CargosEstandarizado;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Exports\RegistroExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
@@ -216,8 +221,11 @@ class RegistroController extends Controller
     }
 
     
-    public function destroy(Registro $registro)
-    {
-        //
+   public function Descargar(){
+        
+       $model = Registro::get();
+       if(Registro::count()>0){
+            return Excel::download(new RegistroExport($model), 'reporte_registros_formulario_'.date('y-m-d_H_i_s').'.xlsx');
+       }
     }
 }

@@ -136,6 +136,9 @@ Route::resource('/admin/registro','RegistroController')->parameters(['registro' 
 
 Route::get('online/ver-ingresos/{id}','OnlineController@verIngresos')->name('online.verIngresos');
 
+Route::get('decargar/registros','RegistroController@Descargar')->name('registro.descargar');
+
+
 
 
 

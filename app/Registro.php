@@ -31,5 +31,10 @@ class Registro extends Model
 
     ];
 
+      public function cargos()
+    {
+        return $this->belongsTo('App\CargosEstandarizado', 'cargos_estandarizados_id');
+    }
+
    
 }

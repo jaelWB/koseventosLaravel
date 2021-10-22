@@ -1,12 +1,11 @@
-<h3>{{$nombre}}</h3>
+<h3>Registro de usuarios </h3>
 <br>
-<table>
+<table style="border:1px solid">
         <tr>
             <td scope="col">#</td>
             <td scope="col">Nombres</td>
             <td scope="col">Apellidos</td>
-            <td scope="col">Evento</td>
-             <td scope="col">Correo</td>
+            <td scope="col">Correo</td>
             <td scope="col">Titulo</td>
             <td scope="col">Cargo</td>
             <td scope="col">Empresa</td>
@@ -33,28 +32,28 @@
                 
                 <tr>
                     <td scope="row">{{$cont++}}</td>
-                    <td>{{$item->registro->nombres}}</td>
-                    <td>{{$item->registro->apellidos}}</td>
-                    <td>{{$nombre}}</td>
-                    <td>{{$item->registro->correo}}</td>
-                     <td>{{$item->registro->titulo}}</td>
-                    <td>{{$item->registro->cargo}}</td>
-                    <td>{{$item->registro->empresa}}</td>
-                    <td>{{$item->registro->celular}}</td>
-                    <td>{{$item->registro->telefono}}</td>
-                    <td>{{$item->registro->direccion}}</td>
-                    <td>{{$item->registro->genero}}</td>
-                    <td>{{$item->registro->otro_genero}}</td>
-                    <td>{{$item->registro->ciudad}}</td>
-                    <td>{{$item->registro->rango_edad}}</td>
-                    <td>{{$item->registro->entero}}</td>
-                    <td>{{$item->registro->otro_entero}}</td>
-                    <td>{{!empty($item->registro->cargos_estandarizados_id)?$item->registro->cargos->descripcion:'--'}}</td>
-                    <td>{{$item->registro->desea}}</td>
-                    <td>{{$item->registro->asistir}}</td>
-                    <td>{{$item->registro->educacion}}</td>
+                    <td>{{$item->nombres}}</td>
+                    <td>{{$item->apellidos}}</td>
+                    <td>{{$item->correo}}</td>
 
-                    <td>{{$item->fecha}}</td>
+                    <td>{{$item->titulo}}</td>
+                    <td>{{$item->cargo}}</td>
+                    <td>{{$item->empresa}}</td>
+                    <td>{{$item->celular}}</td>
+                    <td>{{$item->telefono}}</td>
+                    <td>{{$item->direccion}}</td>
+                    <td>{{$item->genero}}</td>
+                    <td>{{$item->otro_genero}}</td>
+                    <td>{{$item->ciudad}}</td>
+                    <td>{{$item->rango_edad}}</td>
+                    <td>{{$item->entero}}</td>
+                    <td>{{$item->otro_entero}}</td>
+                    <td>{{!empty($item->cargos_estandarizados_id)?$item->cargos->descripcion:'--'}}</td>
+                    <td>{{$item->desea}}</td>
+                    <td>{{$item->asistir}}</td>
+                    <td>{{$item->educacion}}</td>
+
+                    <td>{{$item->created_at}}</td>
                     
                     
                 </tr>

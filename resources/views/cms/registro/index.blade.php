@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="{{route('registro.create')}}" class="btn btn-primary"><i class="icofont-plus"></i> Agregar nuevo</a>
+                <a href="{{route('registro.descargar')}}" class="btn btn-success"><i class="icofont-file-excel"></i> Descargar base de registros</a>
             </div>
         </div>
     </div>

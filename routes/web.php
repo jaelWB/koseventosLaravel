@@ -133,6 +133,7 @@ Route::patch('online/{online}','OnlineController@update')->name('online.update')
 Route::get('online/elimina/{id}','OnlineController@eliminar')->name('online.eliminar');
 
 Route::resource('/admin/registro','RegistroController')->parameters(['registro' => 'registro']);
+Route::get('/admin/registroall','RegistroController@destroyAll')->name('registro.destroyall');
 
 Route::get('online/ver-ingresos/{id}','OnlineController@verIngresos')->name('online.verIngresos');
 

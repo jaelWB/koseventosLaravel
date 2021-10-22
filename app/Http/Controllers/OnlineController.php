@@ -67,13 +67,13 @@ class OnlineController extends Controller
         //     $path = $request->modal->move(public_path('upload/online'), $imageName);
         // }
 
-        $even = preg_replace('/[^A-Za-z0-9]/', "-", strtolower($request->get('titulo')));
-        $slugValidar = Online::where('slug',$even)->count();
-        if($slugValidar >0){
-            $slug = $even.$slugValidar+1;
-        }else{
-            $slug = $even;
-        }
+//        $even = preg_replace('/[^A-Za-z0-9]/', "-", strtolower($request->get('titulo')));
+//        $slugValidar = Online::where('slug',$even)->count();
+//        if($slugValidar >0){
+//            $slug = $even.$slugValidar+1;
+//        }else{
+//            $slug = $even;
+//        }
 
 
         $online = Online::create(
@@ -133,13 +133,13 @@ class OnlineController extends Controller
 
         
 
-        $even = preg_replace('/[^A-Za-z0-9]/', "-", strtolower($request->get('titulo')));
-        $slugValidar = Online::where('slug',$even)->where('id','!=',$online->id)->count();
-        if($slugValidar >0){
-            $slug = $even.$slugValidar+1;
-        }else{
-            $slug = $even;
-        }
+//        $even = preg_replace('/[^A-Za-z0-9]/', "-", strtolower($request->get('titulo')));
+//        $slugValidar = Online::where('slug',$even)->where('id','!=',$online->id)->count();
+//        if($slugValidar >0){
+//            $slug = $even.$slugValidar+1;
+//        }else{
+//            $slug = $even;
+//        }
 
          $online->update(
            array(

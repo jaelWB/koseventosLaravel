@@ -1,0 +1,1040 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: "daxlineBold";
+    src: url("/css/fonts/daxline/DaxlinePro-Bold.eot"); /* IE9 Compat Modes */
+    src: url("/css/fonts/daxline/DaxlinePro-Bold.eot?#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */ url("/css/fonts/daxline/DaxlinePro-Bold.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Bold.woff") format("woff"),
+        /* Pretty Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "daxline";
+    src: url("/css/fonts/daxline/DaxlinePro-Regular.eot"); /* IE9 Compat Modes */
+    src: url("/css/fonts/daxline/DaxlinePro-Regular.eot?#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */ url("/css/fonts/daxline/DaxlinePro-Regular.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Regular.woff") format("woff"),
+        /* Pretty Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "daxlineLight";
+    src: url("/css/fonts/daxline/DaxlinePro-Light.eot"); /* IE9 Compat Modes */
+    src: url("/css/fonts/daxline/DaxlinePro-Light.eot?#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */ url("/css/fonts/daxline/DaxlinePro-Light.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Light.woff") format("woff"),
+        /* Pretty Modern Browsers */
+            url("/css/fonts/daxline/DaxlinePro-Light.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+:root {
+    --blue-5: #013147;
+    --blue-4: #01628f;
+    --blue-3: #0293d6;
+    --blue-2: #3dc0fd;
+    --blue-1: #9ee0fe;
+    --black-5: #1f292e;
+    --black-4: #505c62;
+    --black-3: #9da8af;
+    --black-2: #d5dadd;
+    --black-1: #f1f3f4;
+    --white: #fdfcfc;
+    --yellow-5: #5f4400;
+    --yellow-4: #bf8900;
+    --yellow-3: #fbb500;
+    --yellow-2: #ffd56a;
+    --yellow-1: #ffeab4;
+    --alert: #eb5757;
+    --g-c-red-dark: #43120f;
+    --g-c-red-basic: #ca372e;
+    --g-c-red-grey: #87251f;
+    --g-c-red-mid: #df7771;
+    --g-c-white: #fcfcfc;
+    --g-c-red-light: #efbbb8;
+    --base-amarillo: #f1c857;
+    --base-azul: #50adef;
+    --base-violeta: #5a52ed;
+    --midd-amarillo: #ca9911;
+    --dark-amarillo: #654c08;
+    --gray1: #333333;
+    --gray2: #4f4f4f;
+}
+
+$negroekos: #4a4e56;
+$rojo: #000;
+
+body {
+    font-family: "Cairo", "daxline", "Arial";
+    color: $negroekos;
+}
+b {
+    font-family: "daxlineBold";
+}
+.bg-menulateral {
+    min-height: 100vh;
+    height: auto;
+}
+.menu-lateral {
+    li {
+        border-bottom: 1px solid rgba($color: #f4f4f4, $alpha: 0.1);
+
+        a {
+            font-size: 14px;
+            font-family: "daxlineLight";
+            margin: 7px auto;
+            i {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.titulo-menu {
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 10px auto 0;
+    &::after {
+        content: " ";
+        display: block;
+        border-top: 2px solid $white;
+        width: 25%;
+        margin: 10px auto;
+    }
+}
+.lateral-menu {
+    min-height: 100vh;
+    height: 100%;
+    background: rgba(17, 0, 0, 1) 100%;
+}
+.menu-lateral {
+    width: 90%;
+    margin: auto;
+    li {
+        i {
+            font-size: 20px;
+        }
+        a {
+            font-size: 14px;
+            color: $white;
+            margin: 5px auto 0;
+            font-weight: 300;
+        }
+    }
+}
+
+.titulo-index {
+    font-weight: bolder;
+    font-size: 20px;
+    color: $black;
+    &::after {
+        content: "";
+        display: block;
+        width: 5%;
+        border-top: 3px solid $rojo;
+        margin: 5px 0;
+    }
+}
+
+.b {
+    font-family: "daxlineBold";
+}
+.savec {
+    opacity: 0.6;
+    font-size: 20px;
+    visibility: hidden;
+}
+
+// FRONT :end
+.header-interno-home {
+    width: 100%;
+    background: url("/assets/img/frame-37.png");
+    background-size: cover;
+    min-height: 400px;
+    height: auto;
+}
+.logo-front {
+    height: 90px;
+}
+.btn-search {
+    border-radius: 4px;
+    background-color: var(--g-c-white);
+    border: none;
+}
+.btn-locacion {
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+    background-color: #333;
+
+    &:hover {
+        border-radius: 10px;
+        background-color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #333333;
+    }
+    &.active {
+        border-radius: 10px;
+        background-color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #333333;
+    }
+}
+.bg-footer {
+    background-color: #e0e0e0;
+}
+
+// EFECTOS HOVER IMG
+.column {
+    margin: 15px 15px 0;
+    padding: 0;
+}
+.column:last-child {
+    padding-bottom: 20px;
+}
+.column::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+// .column div {
+//     position: relative;
+//     float: left;
+//     min-width: 350px;
+//     width: 100%;
+//     height: 230px;
+//     margin: 0 0 0 25px;
+//     padding: 0;
+// }
+.column div:first-child {
+    margin-left: 0;
+}
+.column div span {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #444;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+figure {
+    min-width: 350px;
+    width: 100%;
+    height: 230px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+figure:hover + span {
+    bottom: -36px;
+    opacity: 1;
+}
+
+/* Zoom In #1 */
+.hover01 figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.hover01 figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+// FIN EFECTOS
+
+.contenedor-eventos {
+    margin: -50px auto 50px;
+}
+.intro-evento {
+    color: #fff;
+    background: rgba($color: #0089c3, $alpha: 0.9);
+    background-blend-mode: multiply;
+    max-height: 70px !important;
+    margin: auto !important;
+    padding: 10px !important;
+    position: absolute !important;
+    bottom: 0;
+}
+
+.Titulo-de-evento {
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.titulo-evento-interno {
+    width: 50%;
+    margin: 50px auto;
+    color: #fff;
+    font-weight: "daxlineBold";
+    font-size: 32px;
+    text-align: center;
+}
+.contenido-resumen-evento {
+    background-color: var(--gray2);
+    width: 40%;
+    margin: 80px auto;
+    min-height: 100px;
+    border-radius: 5px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 55px;
+    img {
+        border-bottom-left-radius: 15px;
+    }
+}
+.header-interno-home-2 {
+    width: 100%;
+    background: url("/assets/img/frame-37.png");
+    background-size: cover;
+    min-height: 550px;
+    height: auto;
+}
+.header-interno-home-f {
+    width: 100%;
+    background: url("/assets/img/frame-37.png");
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+}
+.btninfor {
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #7ed600;
+    &:hover {
+        color: #fff;
+    }
+}
+.btnregistrar {
+    border-radius: 8px;
+    background-color: #7ed600;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--gray2);
+    padding: 10px;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.text-onfp {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.bg-logos {
+    background-color: #7ed600;
+    min-height: 10px;
+    text-align: center;
+    padding: 20px;
+}
+.Eventos-y-Conferencias {
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #000000;
+    text-transform: uppercase;
+}
+.detalle-card-general {
+    background-color: #fafafa;
+
+    min-height: 100px;
+    border-radius: 5px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 55px;
+    img {
+        border-bottom-left-radius: 15px;
+    }
+}
+.detalle-card {
+    h5 {
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: var(--gray1);
+    }
+    p {
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: var(--gray1);
+        text-align: justify;
+    }
+}
+.bg-tematica {
+    margin: -300px auto 100px;
+    &-fondo {
+        background-color: var(--gray2);
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        min-height: 400px;
+        color: #fff;
+    }
+}
+.titulo-tematica {
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.texto-tema {
+    opacity: 0.75;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.ciudades {
+    border-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    min-height: 50px;
+    &-titulo {
+        font-size: 32px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #ffffff;
+    }
+}
+.texto-expo {
+    opacity: 0.75;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--gray2);
+}
+.card-title {
+    font-family: "daxlineBold";
+}
+.mas-info-btn {
+    margin: -20px auto 10px;
+    margin: -10px auto 10px;
+    position: relative;
+    z-index: 2;
+}
+.bg-sublogo {
+    background-color: #f2f2f2;
+}
+.btninfor2 {
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #528b00;
+}
+.contenido-form {
+    width: 60%;
+    margin: 50px auto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--gray2);
+}
+.subtitlo-home {
+    width: 48%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.relative {
+    position: relative;
+}
+
+.logo-enlace {
+    position: absolute;
+    top: -100px;
+    right: 0px;
+}
+.sias {
+    font-size: 12px;
+    margin: 30px auto 0;
+    display: block;
+    text-align: center;
+}
+.img-des {
+    height: auto;
+    min-height: 186px;
+}
+.texto-tema {
+    p,
+    a,
+    h1,
+    ul,
+    li,
+    span,
+    label {
+        color: #fff;
+    }
+}
+.ico30 {
+    font-size: 28px;
+}
+
+.img-perfil {
+    width: 78px;
+    height: 78px;
+}
+.formulario-registro {
+    background-color: #ffffff;
+    margin: auto;
+}
+.bg-inscrito {
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--gray2);
+}
+.contenedor-gracias {
+    background: url("/assets/img/group-207.png");
+    height: 530px;
+    object-fit: contain;
+    width: 541px;
+    margin: 100px auto;
+    position: relative;
+}
+.texto-gracias {
+    width: 400px;
+    height: 330px;
+    border-radius: 8px;
+    box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.5);
+    background-color: var(--g-c-white);
+    margin: 0px auto 0;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 100px;
+    &-titulo {
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: var(--gray1);
+    }
+    &-gracias {
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: var(--gray1);
+        margin: auto;
+        text-align: center;
+    }
+    &-gracias2 {
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: var(--gray1);
+        margin: auto;
+        text-align: center;
+    }
+}
+.nohay {
+    width: 90%;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin: auto;
+    color: #000;
+    font-size: 15px;
+}
+
+//CABECERA PARA EL NUEVO DISEÑO
+.bg-cabecera {
+    background-size: cover !important;
+    width: 100%;
+    height: 615px;
+    background-position: center !important;
+}
+.enlaces-menu-interno {
+    li {
+        a {
+            color: #fff;
+            font-family: Cairo;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height, or 150% */
+
+            /* white */
+
+            color: #ffffff;
+        }
+    }
+}
+
+.titulo-landing-intro {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    width: 40%;
+    text-align: center;
+}
+.presentado_por {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fbfbfb;
+    text-align: center;
+}
+.hora-evento-bg {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 150% */
+
+    text-align: center;
+    color: #fbfbfb;
+    text-transform: uppercase;
+}
+
+.titulo_auspiciante_new {
+    background: #7ed600;
+    border-radius: 0px 0px 16px 16px;
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+}
+
+.texto-espera {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-intro {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+}
+.text-intro-p {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    /* or 133% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.bg-bannerUno {
+    background-size: cover;
+    background-position: center;
+    height: 248px;
+}
+.text-bannerUno {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+.texto-espera-titulo {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.texto-grupo {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+}
+.card-expo {
+    width: 45%;
+    display: inline;
+    margin-right: 20px;
+
+    img {
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+    }
+}
+
+.bg-bannerDos {
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    position: relative;
+}
+.contenido-bg-Dos {
+    position: absolute;
+    width: 45%;
+    top: 50px;
+    right: 50px;
+}
+.text-bannerDos {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+#nav-principal-evento {
+    width: 1128px;
+    margin: 0 auto;
+}
+
+.bg-scroll {
+    background: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid rgba($color: #010101, $alpha: 0.3);
+    border-top: 1px solid transparent;
+    padding-bottom: 0 !important;
+    a {
+        color: #010101 !important;
+        font-weight: bold !important;
+    }
+    img {
+        width: 100px;
+        margin: 0 auto;
+    }
+}
+
+.rd {
+    border-radius: 20px;
+}
+
+.countdown {
+    width: 450px;
+    margin: 20px auto;
+}
+
+.dethor {
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.widget {
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+}
+.btn-tt {
+    position: fixed;
+    right: 0;
+    font-size: 15px;
+    height: auto;
+    width: auto;
+    display: block;
+    z-index: 1;
+    bottom: 40%;
+    border-radius: 0;
+    padding: 5px 25px;
+    font-weight: bold;
+}
+button.btmodas {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    z-index: 1111;
+    top: 13px;
+    right: 12px;
+}
+
+.validate-errors {
+    background: #f57e7e;
+    padding: 15px 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contenedor-eventos {
+        margin: 10px auto 50px;
+    }
+    .header-interno-home {
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .contenido-resumen-evento {
+        background-color: var(--gray2);
+        width: 90%;
+        margin: 30px auto;
+    }
+    .titulo-evento-interno {
+        width: 90%;
+        margin: 20px auto;
+        color: #fff;
+        font-weight: "daxlineBold";
+        font-size: 32px;
+        text-align: center;
+    }
+    .header-interno-home-2 {
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .ciudades {
+        border-radius: 0;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        min-height: 50px;
+    }
+    .formulario-registro {
+        margin: auto;
+        width: 100%;
+    }
+    .contenido-form {
+        width: 90%;
+        margin: 20px auto;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: var(--gray2);
+    }
+    .contenedor-gracias {
+        height: 530px;
+        -o-object-fit: contain;
+        object-fit: contain;
+        width: 100%;
+        margin: 20px auto 0;
+        position: relative;
+    }
+    .nohay {
+        width: 100%;
+        text-align: center;
+        background-color: var(--gray2);
+        border-radius: 10px;
+        margin: auto;
+        color: #fff;
+    }
+
+    .logo-enlace {
+        position: absolute;
+        top: -120px;
+        right: 30px;
+    }
+    #nav-principal-evento {
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 1px solid rgba($color: #010101, $alpha: 0.3);
+        border-top: 1px solid transparent;
+        padding-bottom: 0 !important;
+        color: #000 !important;
+        position: relative !important;
+        a {
+            color: #010101 !important;
+            font-weight: bold !important;
+        }
+        img {
+            width: 100px;
+            margin: 0 auto;
+        }
+    }
+    .countdown {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0;
+    }
+    #countdown {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0;
+    }
+    .titulo-landing-intro {
+        font-family: Cairo;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 40px !important;
+    }
+
+    .dethor {
+        font-family: Cairo;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 48px;
+    }
+    .text-bannerUno {
+        font-family: Cairo;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 25px;
+        text-transform: uppercase;
+    }
+    .contenido-bg-Dos {
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+        color: #000 !important;
+        padding-bottom: 10px;
+    }
+    .text-bannerDos {
+        font-family: Cairo;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #000 !important;
+        text-align: center !important;
+    }
+    .text-bd {
+        font-family: Cairo;
+        font-style: normal;
+        font-size: 14px;
+        color: #000 !important;
+        text-align: center !important;
+    }
+    .card-expo {
+        width: 100%;
+        display: inline;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .logo-front {
+        height: 75px;
+    }
+    .bg-bannerUno {
+        min-height: 248px;
+        height: auto;
+        background-size: cover !important;
+        padding-bottom: 10px;
+    }
+}

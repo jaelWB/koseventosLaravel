@@ -1,0 +1,1 @@
+[05-Aug-2021 11:27:00 America/Bogota] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/gekos/ekoseventos.com/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9

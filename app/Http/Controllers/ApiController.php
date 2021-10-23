@@ -244,7 +244,7 @@ class ApiController extends Controller
                     'status' => false,
                     'keyId' => '', 
                     'appSecret' => '', 
-                    'error' => '1', 
+                    'error' => '4', 
 
                 );
             }

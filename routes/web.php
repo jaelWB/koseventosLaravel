@@ -137,6 +137,11 @@ Route::get('/admin/registroall','RegistroController@destroyAll')->name('registro
 
 Route::get('online/ver-ingresos/{id}','OnlineController@verIngresos')->name('online.verIngresos');
 
+Route::get('test/email','HomeController@testEmail')->name('test.email');
+
+Route::get('decargar/registros','RegistroController@Descargar')->name('registro.descargar');
+
+
 
 
 

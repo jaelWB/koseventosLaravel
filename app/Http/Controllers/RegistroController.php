@@ -219,20 +219,58 @@ class RegistroController extends Controller
 
     public function destroy(Registro $registro)
     {
+        DB::beginTransaction();
 
-        $registro->delete();
-        return back()->with('status', 'Registro eliminado con exito');
+        try {
+            self::deleteRegistroUser($registro);
+            DB::commit();
+            return back()->with('status', 'Registro eliminado con exito');
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        } catch (\Throwable $e) {
+            DB::rollback();
+            throw $e;
+        }
+
     }
 
     public function destroyAll()
     {
-        if($registros = Registro::get()){
-            dd($registros);
-           foreach ($registros as $registro){
-               $registro->delete();
-           }
+        DB::beginTransaction();
+        try {
+            if ($registros = Registro::get()) {
+                foreach ($registros as $registro) {
+                    self::deleteRegistroUser($registro);
+                }
+            }
+
+            DB::commit();
+            return back()->with('status', 'Registros eliminados con exito');
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        } catch (\Throwable $e) {
+            DB::rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * @param $registro
+     * @return bool
+     */
+    public static function deleteRegistroUser($registro)
+    {
+        if ($registro = is_object($registro) ? $registro : Registro::find($registro)) {
+            if ($user = User::getUserEmail($registro->correo)) {
+                $user->delete();
+            }
+
+            $registro->delete();
+            return true;
         }
 
-        return back()->with('status', 'Registros eliminados con exito');
+        return false;
     }
 }

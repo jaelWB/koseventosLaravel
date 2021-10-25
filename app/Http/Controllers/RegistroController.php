@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Registro;
 use App\User;
 use App\CargosEstandarizado;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,19 +18,20 @@ use Illuminate\Http\Request;
 
 class RegistroController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
-   
+
     public function index()
     {
-         ValidacionesController::soloADMIN();
+        ValidacionesController::soloADMIN();
 
         $model = Registro::orderby('id','DESC')->get();
         return view('cms.registro.index',array('model'=>$model));
     }
 
-   
+
     public function create()
     {
          ValidacionesController::soloADMIN();
@@ -40,7 +42,7 @@ class RegistroController extends Controller
         return view('cms.registro.create',array('registro'=>$registro, 'model'=>$model));
     }
 
-    
+
     public function store(Request $request)
     {
         ValidacionesController::soloADMIN();
@@ -220,12 +222,69 @@ class RegistroController extends Controller
 
     }
 
-    
-   public function Descargar(){
-        
-       $model = Registro::get();
-       if(Registro::count()>0){
+
+    public function destroy(Registro $registro)
+    {
+        DB::beginTransaction();
+
+        try {
+            self::deleteRegistroUser($registro);
+            DB::commit();
+            return back()->with('status', 'Registro eliminado con exito');
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        } catch (\Throwable $e) {
+            DB::rollback();
+            throw $e;
+        }
+
+    }
+
+    public function destroyAll()
+    {
+        DB::beginTransaction();
+        try {
+            if ($registros = Registro::get()) {
+                foreach ($registros as $registro) {
+                    self::deleteRegistroUser($registro);
+                }
+            }
+
+            DB::commit();
+            return back()->with('status', 'Registros eliminados con exito');
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        } catch (\Throwable $e) {
+            DB::rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * @param $registro
+     * @return bool
+     */
+    public static function deleteRegistroUser($registro)
+    {
+        if ($registro = is_object($registro) ? $registro : Registro::find($registro)) {
+            if ($user = User::getUserEmail($registro->correo)) {
+                $user->delete();
+            }
+
+            $registro->delete();
+            return true;
+        }
+
+        return false;
+    }
+
+    public function Descargar(){
+
+        $model = Registro::get();
+        if(Registro::count()>0){
             return Excel::download(new RegistroExport($model), 'reporte_registros_formulario_'.date('y-m-d_H_i_s').'.xlsx');
-       }
+        }
     }
 }

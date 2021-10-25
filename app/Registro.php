@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Registro extends Model
 {
     protected $table = 'registros';
+    use SoftDeletes;
 
-     protected $fillable = [
+    protected $fillable = [
         'nombres',
         'apellidos',
         'correo',
@@ -36,5 +38,5 @@ class Registro extends Model
         return $this->belongsTo('App\CargosEstandarizado', 'cargos_estandarizados_id');
     }
 
-   
+
 }
